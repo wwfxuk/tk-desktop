@@ -326,6 +326,7 @@ class DesktopEngineSiteImplementation(object):
         """
         # Let the desktop window know all commands for the project have been registered.
         self.desktop_window.on_project_commands_finished()
+        self.desktop_window.project_overlay.hide()
 
     def _handle_button_command_triggered(self, group, name):
         """ Button clicked from a registered command. """
