@@ -1034,7 +1034,6 @@ class DesktopWindow(SystrayWindow):
     def set_groups(self, groups, show_recents=True):
         self._project_command_model.set_project(
             self.current_project, groups, show_recents=show_recents)
-        self.project_overlay.hide()
 
         key = "project_expanded_state.%d" % self.current_project["id"]
         expanded_state = self._load_setting(key, {}, True)
@@ -1477,7 +1476,7 @@ class DesktopWindow(SystrayWindow):
         Picks which pipeline configuration to be loaded based on user input or previously used
         pipeline settings.
 
-        :param list pipeline_configurations: List of dictionaries with keys 'id' and 'code'.
+        :param list pipeline_configurations: List of dicionaries with keys 'id' and 'code'.
         :param dict project: Project entity dictionary with key 'id'.
 
         :returns: The pipeline configuration that should be loaded, or None.
