@@ -366,7 +366,7 @@ class DesktopEngineProjectImplementation(object):
             except Exception:
                 # If something couldn't be pickled, don't fret too much about it,
                 # we'll format it ourselves instead.
-                self._proxy.call_no_response(
+                self._project_comm.call_no_response(
                     "proxy_log", record.levelno, (msg % record.args), []
                 )
 
